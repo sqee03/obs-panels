@@ -14,17 +14,19 @@ body {
 }
 
 // Variables
-$keyframe-slide-content-visible: 20; // At this point, all content is visible
+$keyframe-slide-header-visible: 5; // At this point, header is visible
+$keyframe-slide-content-visible: 10; // At this point, all content is visible
+$keyframe-social-end: 10;
 
-$duration-global: 20s; // Duration of all animations combined together
-
-$duration-social: 3s;
-$duration-fb: 6s;
-$duration-twitter: 5s;
-
+$duration-global: 30s; // Duration of all animations combined together
 $init-delay: (($duration-global/100)*$keyframe-slide-content-visible);
-$delay-social: $init-delay;
-$delay-fb: ($duration-social + $delay-social);
+
+$duration-social: ($duration-global - $init-delay);
+$duration-fb: 8s;
+$duration-twitter: 8s;
+
+$delay-social: ($init-delay + 5s);
+$delay-fb: ((($duration-social/100)*$keyframe-social-end) + $delay-social);
 $delay-twitter: ($duration-fb + $delay-fb);
 
 // Mixins
@@ -71,15 +73,6 @@ p {
 *    Panel
 * ------------------------------------
 */
-.test {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 400px;
-    height: 100px;
-    @include transparentBlack(0.75);
-}
-
 section {
     width: 0;
     height: 0;
@@ -89,9 +82,9 @@ section {
     left: 0;
 
     overflow: hidden;
-    box-shadow: 0 0 20px #0f3369;
+    box-shadow: 0 0 25px #000;
 
-    font-size: 16px;
+    font-size: 18px;
 
     @include transparentBlack(0.75);
 
@@ -116,7 +109,7 @@ section {
             float: left;
         }
         p {
-            padding: 10px;
+            padding: 20px 10px;
         }
     }
 }
@@ -135,12 +128,16 @@ section {
     font-size: 36px;
     line-height: 100px;
     padding-left: 125px;
-    background-size: 70px 70px;
-    background-position: 15px 15px;
+    background-size: 60px 60px;
+    background-position: 20px 20px;
     background-repeat: no-repeat;
 }
 #facebook {
     background-image: url(../images/facebook.png);
+}
+#twitter {
+    background-image: url(../images/twitter.png);
+    background-position: 25px 20px;
 }
 
 /* Animations */
@@ -149,11 +146,11 @@ section {
         width: 0px;
         height: 25px;
     }
-    10%, 90% {
+    #{$keyframe-slide-header-visible}%, #{(100 - $keyframe-slide-header-visible)}% {
         width: 400px;
         height: 25px;
     }
-    #{$keyframe-slide-content-visible}%, 80% {
+    #{$keyframe-slide-content-visible}%, #{(100 - $keyframe-slide-content-visible)}% {
         width: 400px;
         height: 125px;
     }
@@ -170,7 +167,7 @@ section {
     0% {
         opacity: 1;
     }
-    100% {
+    #{$keyframe-social-end}%, 100% {
         opacity: 0;
     }
 }
@@ -186,7 +183,6 @@ section {
 // Animations order
 // 1
 #social {
-    // opacity: 0;
     @include animation-fadeOut($duration-social, $delay-social);
 }
 // 2
@@ -196,20 +192,6 @@ section {
 }
 // 3
 #twitter {
-    display: none;
     opacity: 0;
     @include animation-fadeInOut($duration-twitter, $delay-twitter);
 }
-
-
-
-// .test:after {
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     display: block;
-//     font-size: 20px;
-//     padding: 10px;
-//     border: 2px solid #fff;
-//     content: "#{$global-duration}";
-// }

@@ -20,14 +20,6 @@ p {
 *    Panel
 * ------------------------------------
 */
-.test {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 400px;
-  height: 100px;
-  background-color: rgba(0, 0, 0, 0.75); }
-
 section {
   width: 0;
   height: 0;
@@ -35,8 +27,8 @@ section {
   bottom: 0;
   left: 0;
   overflow: hidden;
-  box-shadow: 0 0 20px #0f3369;
-  font-size: 16px;
+  box-shadow: 0 0 25px #000;
+  font-size: 18px;
   background-color: rgba(0, 0, 0, 0.75); }
   section header {
     width: 400px;
@@ -55,11 +47,11 @@ section {
       height: 90px;
       float: left; }
     section article p {
-      padding: 10px; }
+      padding: 20px 10px; }
 
 .animated {
   animation-name: slideInAndOut;
-  animation-duration: 20s;
+  animation-duration: 30s;
   animation-delay: 0;
   animation-iteration-count: 1;
   animation-timing-function: ease; }
@@ -73,22 +65,26 @@ section {
   font-size: 36px;
   line-height: 100px;
   padding-left: 125px;
-  background-size: 70px 70px;
-  background-position: 15px 15px;
+  background-size: 60px 60px;
+  background-position: 20px 20px;
   background-repeat: no-repeat; }
 
 #facebook {
   background-image: url(../images/facebook.png); }
+
+#twitter {
+  background-image: url(../images/twitter.png);
+  background-position: 25px 20px; }
 
 /* Animations */
 @-webkit-keyframes slideInAndOut {
   0%, 100% {
     width: 0px;
     height: 25px; }
-  10%, 90% {
+  5%, 95% {
     width: 400px;
     height: 25px; }
-  20%, 80% {
+  10%, 90% {
     width: 400px;
     height: 125px; } }
 @-webkit-keyframes fadeIn {
@@ -99,7 +95,7 @@ section {
 @-webkit-keyframes fadeOut {
   0% {
     opacity: 1; }
-  100% {
+  10%, 100% {
     opacity: 0; } }
 @-webkit-keyframes fadeInOut {
   0%, 100% {
@@ -108,24 +104,23 @@ section {
     opacity: 1; } }
 #social {
   animation-name: fadeOut;
-  animation-duration: 3s;
-  animation-delay: 4s;
+  animation-duration: 27s;
+  animation-delay: 8s;
   animation-iteration-count: 1;
   animation-timing-function: ease; }
 
 #facebook {
   opacity: 0;
   animation-name: fadeInOut;
-  animation-duration: 6s;
-  animation-delay: 7s;
+  animation-duration: 8s;
+  animation-delay: 10.7s;
   animation-iteration-count: 1;
   animation-timing-function: ease; }
 
 #twitter {
-  display: none;
   opacity: 0;
   animation-name: fadeInOut;
-  animation-duration: 5s;
-  animation-delay: 13s;
+  animation-duration: 8s;
+  animation-delay: 18.7s;
   animation-iteration-count: 1;
   animation-timing-function: ease; }

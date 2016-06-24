@@ -1,0 +1,149 @@
+@import url(https://fonts.googleapis.com/css?family=BenchNine:400,700,300&subset=latin,latin-ext);
+
+/*
+* ------------------------------------
+*    Page layout
+* ------------------------------------
+*/
+body {
+    font-family: 'BenchNine', Arial, Verdana, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background: #222 url(../images/wot-sample-screenshot.jpg) no-repeat center top;
+    // background: #222 url(../images/sample-screen.jpg) no-repeat center top;
+    padding: 0;
+    margin: 0;
+}
+
+// Mixins
+@mixin transparentBackground($color, $opacity) {
+    background-color: rgba($color, $opacity);
+}
+
+// Resets
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+* ------------------------------------
+*    Panel
+* ------------------------------------
+*/
+// Set of panels
+aside {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+// Each panel
+section {
+    float: left;
+    width: 175px;
+    height: 80px;
+    margin-left: 5px;
+
+    overflow: hidden;
+    box-shadow: 0 0 25px #000;
+    border-left: 2px solid #9304F9;
+
+    font-size: 18px;
+
+    @include transparentBackground(#000,0.8);
+
+    header {
+        height: 20px;
+        line-height: 20px;
+        font-size: 15px;
+        text-transform: uppercase;
+        @include transparentBackground(#000,0.5);
+    }
+    article {
+        position: relative;
+    }
+}
+
+#uptime {
+    width: 135px;
+
+    article {
+        line-height: 60px;
+        font-size: 30px;
+    }
+}
+
+#follow {
+    article {
+        line-height: 60px;
+        font-size: 18px;
+        padding: 0 15px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+#donate {
+    border-color: #FF08E9;
+
+    header {
+        @include transparentBackground(#FF08E9,0.5);
+    }
+
+    article {
+        line-height: 60px;
+        font-size: 18px;
+        padding: 0 15px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+#social {
+    article {
+        line-height: 60px;
+        font-size: 26px;
+    }
+}
+
+#wn8 {
+    width: 135px;
+
+    header {
+        @include transparentBackground(#793DB6,0.3);
+    }
+
+    article {
+        padding-top: 11px;
+        padding-left: 20px;
+        line-height: 25px;
+        font-size: 36px;
+        color: #793DB6;
+
+        em {
+            display: block;
+            margin-left: -15px;
+            font-size: 15px;
+            font-style: normal;
+            color: #fff;
+        }
+
+        span {
+            display: block;
+            width: 60px;
+            height: 20px;
+            line-height: 20px;
+            position: absolute;
+            left: -20px;
+            top: 20px;
+            font-size: 13px;
+            text-align: center;
+            transform: rotate(90deg);
+            // background-color: #793DB6;
+            @include transparentBackground(#793DB6,0.6);
+            color: #fff;
+            // opacity: 0.6;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+Info panels content:
+
+1) Stream timer(time since stream started) - stream uptime
+2) Number of MOE ... Make a .txt file which will be feeding OBS
+3) % of MOE for selected tank ... somehow make export to .txt file from game and feed OBS with it
+4) Current song name
+5) Last follower
+6) Last donation

@@ -34,7 +34,7 @@ section {
     width: 400px;
     height: 26px;
     line-height: 26px;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     text-transform: uppercase;
     background-color: rgba(0, 0, 0, 0.5); }
@@ -45,9 +45,10 @@ section {
     section article img {
       width: 90px;
       height: 90px;
-      float: left; }
+      float: left;
+      margin: 5px 0 0 2px; }
     section article p {
-      padding: 20px 10px; }
+      padding: 26px 20px 20px 18px; }
 
 .animated {
   animation-name: slideInAndOut;

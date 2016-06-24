@@ -92,7 +92,7 @@ section {
         width: 400px;
         height: 26px;
         line-height: 26px;
-        font-size: 20px;
+        font-size: 18px;
         text-align: center;
         text-transform: uppercase;
 
@@ -107,9 +107,10 @@ section {
             width: 90px;
             height: 90px;
             float: left;
+            margin: 5px 0 0 2px;
         }
         p {
-            padding: 20px 10px;
+            padding: 26px 20px 20px 18px;
         }
     }
 }

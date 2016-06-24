@@ -8,3 +8,7 @@
 *.sublime-project
 *.sublime-workspace
 
+# SASS
+sass/.sass-cache
+sass/.sass-cache/*
+

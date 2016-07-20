@@ -29,8 +29,8 @@ aside {
 section {
   float: left;
   width: 175px;
-  height: 80px;
-  margin-left: 5px;
+  height: 60px;
+  margin-left: 0;
   overflow: hidden;
   box-shadow: 0 0 25px #000;
   border-left: 2px solid #9304F9;
@@ -43,34 +43,33 @@ section {
     text-transform: uppercase;
     background-color: rgba(0, 0, 0, 0.5); }
   section article {
-    position: relative; }
+    position: relative;
+    line-height: 40px; }
 
 #uptime {
   width: 135px; }
   #uptime article {
-    line-height: 60px;
     font-size: 30px; }
 
+#follower-goal article em {
+  font-style: normal;
+  color: #666; }
+
 #follow article {
-  line-height: 60px;
   font-size: 18px;
   padding: 0 15px;
   text-overflow: ellipsis;
   overflow: hidden; }
 
-#donate {
-  border-color: #FF08E9; }
-  #donate header {
-    background-color: rgba(255, 8, 233, 0.5); }
-  #donate article {
-    line-height: 60px;
-    font-size: 18px;
-    padding: 0 15px;
-    text-overflow: ellipsis;
-    overflow: hidden; }
+#donate header {
+  background-color: rgba(147, 4, 249, 0.3); }
+#donate article {
+  font-size: 18px;
+  padding: 0 15px;
+  text-overflow: ellipsis;
+  overflow: hidden; }
 
 #social article {
-  line-height: 60px;
   font-size: 26px; }
 
 #wn8 {
